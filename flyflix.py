@@ -335,7 +335,7 @@ def localexperiment():
                 closedloop_bar_deg=alpha, 
                 #closedloop_space_deg=alpha,    ## FIXME: doesn't exist anymore?
                 #cl_start_position=cl_start,    ## FIXME: doesn't exist anymore?
-                closedloop_duration=Duration(30000), 
+                closedloop_duration=Duration(10000), 
                 gain=gain, 
                 comment = f"object speed {speed} bar {alpha} gain {gain}")
             block.append(current_trial)
@@ -378,6 +378,7 @@ def l4l5left():
                         space_deg = (40 - alpha),
                         rotate_deg_hz=rotation_speed,
                         pretrial_duration=Duration(250), posttrial_duration=Duration(250),
+                        #closedloop_duration = Duration(10000), closedloop_bar_deg = 30,
                         fg_color=fg_color, bg_color=bg_color,
                         comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
                     block.append(t)
