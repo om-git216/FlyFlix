@@ -362,11 +362,11 @@ def l4l5left():
 
     ## rotation 
     for alpha in [20, 5]: #the total duty cycle is also implemented here in alpha
-        for speed in [2]:
+        for speed in [8]:
             for direction in [-1, 1]:
                 if speed == 0 and direction == -1:
                     continue
-                for clrs in [(107, 147)]:
+                for clrs in [(107, 147), (63, 191)]:
                     bright = clrs[1]
                     contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
                     fg_color = clrs[1] << 8
