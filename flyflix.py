@@ -313,7 +313,7 @@ def optomotor():
 
     repetitions = 3
     counter = 0
-    opening_black_screen = Duration(5000)
+    opening_black_screen = Duration(15000)
     opening_black_screen.trigger_delay(socketio)
     for i in range(repetitions):
         socketio.emit("meta", (time.time_ns(), "block-repetition", i))
