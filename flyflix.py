@@ -95,7 +95,7 @@ def logdata(sid, client_timestamp, request_timestamp, key, value):
     :param str value: value of the key-value pair
     """
     app.logger.info([sid, client_timestamp, request_timestamp, key, value])
-
+    
 
 @socketio.on("connect")
 def connect():
