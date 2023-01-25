@@ -322,10 +322,18 @@ def optomotor():
     global RUN_FICTRAC
     RUN_FICTRAC = True
     _ = socketio.start_background_task(target = log_fictrac_timestamp)
+    
 
     repetitions = 3
     counter = 0
-    turn_screen_off(5000)
+    #turn_screen_off(5000)
+    
+    opening_screen = Trial(
+        #counter, 
+        bar_deg=0, space_deg=360, 
+        openloop_duration=Duration(10000), 
+        rotate_deg_hz=0, comment="opening black screen")
+    opening_screen.trigger(socketio)
     #opening_black_screen = Duration(15000)
     #opening_black_screen.trigger_delay(socketio)
     for i in range(repetitions):
