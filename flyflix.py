@@ -81,18 +81,6 @@ def savedata(sid, shared, key, value=0):
     :param str value: Value from the key-value pair.
     """
     app.logger.info([sid, shared, key, value])
-    
-def turn_screen_off(duration=1000, offvalue=0, background="#000000"):
-    """
-    Turn screen off
-
-    TODO: Delete?
-    """
-    ttime = datetime.now() + timedelta(milliseconds=duration)
-    socketio.emit('screen', (offvalue, background))
-    while datetime.now() < ttime:
-        time.sleep(0.01)
-    # socketio.emit('screen', 1)
 
 
 def logdata(sid, client_timestamp, request_timestamp, key, value):
@@ -326,7 +314,6 @@ def optomotor():
 
     repetitions = 3
     counter = 0
-    #turn_screen_off(5000)
     
     opening_screen = Trial(
         #counter, 
