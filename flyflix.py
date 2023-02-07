@@ -213,7 +213,7 @@ def optomotor():
     log_metadata()
 
     ## rotation 
-    for alpha in [30]: #specifying the bar_deg
+    for alpha in [15]: #specifying the bar_deg
         for speed in [5]: #specifying the temporal frequency (in Hz)
             for direction in [-1, 1]: #specifying the direction of movement
                 for clrs in [(0, 50), (0, 255)]: #specifying the contrast/brightness
@@ -231,8 +231,8 @@ def optomotor():
                             bar_deg=alpha, 
                             space_deg = (60-alpha),
                             rotate_deg_hz=rotation_speed,
-                            openloop_duration = Duration(20000),
-                            pretrial_duration=Duration(250), posttrial_duration=Duration(250),
+                            openloop_duration = Duration(8000),
+                            pretrial_duration=Duration(1000), posttrial_duration=Duration(1000),
                             fg_color=fg_color, bg_color=bg_color,
                             comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
                         block.append(t)
@@ -241,7 +241,7 @@ def optomotor():
                         
     ## Static
     
-    for alpha in [30]:
+    for alpha in [15]:
         for speed in [0]:
             for direction in [-1, 1]:
                 for clrs in [(0, 50)]:
@@ -255,8 +255,8 @@ def optomotor():
                         bar_deg=alpha, 
                         space_deg = (60-alpha),
                         rotate_deg_hz=rotation_speed,
-                        openloop_duration = Duration(20000),
-                        pretrial_duration=Duration(250), posttrial_duration=Duration(250),
+                        openloop_duration = Duration(8000),
+                        pretrial_duration=Duration(1000), posttrial_duration=Duration(1000),
                         fg_color=fg_color, bg_color=bg_color,
                         comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
                     block.append(t)
@@ -312,11 +312,11 @@ def optomotor():
     _ = socketio.start_background_task(target = log_fictrac_timestamp)
     
 
-    repetitions = 3
+    repetitions = 6
     counter = 0
     
     opening_screen = Trial(
-        #counter, 
+        counter, 
         bar_deg=0, space_deg=360, 
         openloop_duration=Duration(10000), 
         rotate_deg_hz=0, comment="opening black screen")
