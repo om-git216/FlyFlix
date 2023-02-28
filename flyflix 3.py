@@ -213,10 +213,10 @@ def optomotor():
     log_metadata()
 
     ## rotation 
-    for alpha in [10, 30]: #specifying the bar_deg
-        for speed in [4, 10]: #specifying the temporal frequency (in Hz)
+    for alpha in [30]: #specifying the bar_deg
+        for speed in [4]: #specifying the temporal frequency (in Hz)
             for direction in [-1, 1]: #specifying the direction of movement
-                for clrs in [(0, 64), (0, 255)]: #specifying the contrast/brightness
+                for clrs in [(0, 1), (0, 2), (0, 4), (0, 8), (0, 16), (0, 32), (0, 64), (0, 128), (0, 255)]: #specifying the contrast/brightness
                         bright = clrs[1]
                         contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
                         fg_color = clrs[1] << 8
@@ -240,27 +240,23 @@ def optomotor():
     for alpha in [30]:
         for speed in [4]:
             for direction in [-1, 1]:
-            	for color in ["red", "blue"]:
-                    for clrs in [(0, 255)]:
-                        bright = clrs[1]
-                        contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
-                        if color == "red":
-                            fg_color = clrs[1] << 16
-                        if color == "blue":
-                            fg_color = clrs[1]
-                        bg_color = clrs[0] << 8
-                        rotation_speed = alpha*2*speed*direction
-                        t = Trial(
-                            counter, 
-                            bar_deg=alpha, 
-                            space_deg = (60-alpha),
-                            rotate_deg_hz=rotation_speed,
-                            openloop_duration = Duration(4000),
-                            pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
-                            fg_color=fg_color, bg_color=bg_color,
-                            comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
-                        block.append(t)
-                        counter += 1
+                for clrs in [(0, 255)]:
+                    bright = clrs[1]
+                    contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
+                    fg_color = clrs[1] << 16
+                    bg_color = clrs[0] << 8
+                    rotation_speed = alpha*2*speed*direction
+                    t = Trial(
+                        counter, 
+                        bar_deg=alpha, 
+                        space_deg = (60-alpha),
+                        rotate_deg_hz=rotation_speed,
+                        openloop_duration = Duration(4000),
+                        pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
+                        fg_color=fg_color, bg_color=bg_color,
+                        comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
+                    block.append(t)
+                    counter += 1
                         
     # Oscillation
     #for alpha in [15]:
@@ -354,14 +350,14 @@ def log_metadata():
         "fly-batch": "2020-01-01",
         "day-night-since": "2020-01-01",
 
-        "birth-start": "2023-02-23 19:00:00",
-        "birth-end": "2023-02-24 18:00:00",
+        "birth-start": "2023-02-22 19:00:00",
+        "birth-end": "2023-02-23 19:00:00",
 
-        "starvation-start": "2023-02-2 13:30:00",
+        "starvation-start": "2023-02-27 14:00:00",
 
-        "tether-start": "2023-02-28 16:46:00",
-        "fly": 241,
-        "tether-end"  : "2023-02-28 16:51:00",
+        "tether-start": "2023-02-27 15:42:00",
+        "fly": 239,
+        "tether-end"  : "2023-02-27 16:15:00",
         "sex": "f",
         
         "day-start": "01:00:00",
