@@ -274,112 +274,112 @@ def optomotorleft():
                         counter += 1
                         
     ## rotation with left mask
-    #for alpha in [10, 30]: #specifying the bar_deg
-    #    for speed in [4, 10]: #specifying the temporal frequency (in Hz)
-    #        for direction in [-1, 1]: #specifying the direction of movement
-    #            for clrs in [(0, 64), (0, 255)]: #specifying the contrast/brightness
-    #                    bright = clrs[1]
-    #                    contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
-    #                    fg_color = clrs[1] << 8
-    #                    bg_color = clrs[0] << 8
-    #                    rotation_speed = alpha*2*speed*direction
-    #                    t = Trial(
-    #                        counter, 
-    #                        bar_deg=alpha, 
-    #                        space_deg = (60-alpha),
-    #                        start_mask_deg = 0,
-    #                        end_mask_deg = 180,
-    #                        rotate_deg_hz=rotation_speed,
-    #                        openloop_duration = Duration(4000),
-    #                        pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
-    #                        fg_color=fg_color, bg_color=bg_color,
-    #                        comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
-    #                    block.append(t)
-    #                    counter += 1
-    #                    
-    #                    
-    ## Red and blue
-    #
-    #for alpha in [30]:
-    #    for speed in [4]:
-    #        for direction in [-1, 1]:
-    #        	for color in ["red", "blue"]:
-    #                for clrs in [(0, 255)]:
-    #                    bright = clrs[1]
-    #                    contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
-    #                    if color == "red":
-    #                        fg_color = clrs[1] << 16
-    #                    if color == "blue":
-    #                        fg_color = clrs[1]
-    #                    bg_color = clrs[0] << 8
-    #                    rotation_speed = alpha*2*speed*direction
-    #                    t = Trial(
-    #                        counter, 
-    #                        bar_deg=alpha, 
-    #                        space_deg = (60-alpha),
-    #                        rotate_deg_hz=rotation_speed,
-    #                        start_mask_deg = 180,
-    #                        end_mask_deg = 360,
-    #                        openloop_duration = Duration(4000),
-    #                        pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
-    #                        fg_color=fg_color, bg_color=bg_color,
-    #                        comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
-    #                    block.append(t)
-    #                    counter += 1
-    #                    
-    ## rotation with right mask
-    #for alpha in [10, 30]: #specifying the bar_deg
-    #    for speed in [4, 10]: #specifying the temporal frequency (in Hz)
-    #        for direction in [-1, 1]: #specifying the direction of movement
-    #            for clrs in [(0, 64), (0, 255)]: #specifying the contrast/brightness
-    #                    bright = clrs[1]
-    #                    contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
-    #                    fg_color = clrs[1] << 8
-    #                    bg_color = clrs[0] << 8
-    #                    rotation_speed = alpha*2*speed*direction
-    #                    t = Trial(
-    #                        counter, 
-    #                        bar_deg=alpha, 
-    #                        space_deg = (60-alpha),
-    #                        start_mask_deg = 180,
-    #                        end_mask_deg = 360,
-    #                        rotate_deg_hz=rotation_speed,
-    #                        openloop_duration = Duration(4000),
-    #                        pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
-    #                        fg_color=fg_color, bg_color=bg_color,
-    #                        comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
-    #                    block.append(t)
-    #                    counter += 1
-    #                    
-    #                    
+    for alpha in [10, 30]: #specifying the bar_deg
+        for speed in [4, 10]: #specifying the temporal frequency (in Hz)
+            for direction in [-1, 1]: #specifying the direction of movement
+                for clrs in [(0, 64), (0, 255)]: #specifying the contrast/brightness
+                        bright = clrs[1]
+                        contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
+                        fg_color = clrs[1] << 8
+                        bg_color = clrs[0] << 8
+                        rotation_speed = alpha*2*speed*direction
+                        t = Trial(
+                            counter, 
+                            bar_deg=alpha, 
+                            space_deg = (60-alpha),
+                            start_mask_deg = 0,
+                            end_mask_deg = 180,
+                            rotate_deg_hz=rotation_speed,
+                            openloop_duration = Duration(4000),
+                            pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
+                            fg_color=fg_color, bg_color=bg_color,
+                            comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
+                        block.append(t)
+                        counter += 1
+                        
+                        
     ## Red and blue
     
-    #for alpha in [30]:
-    #    for speed in [4]:
-    #        for direction in [-1, 1]:
-    #        	for color in ["red", "blue"]:
-    #                for clrs in [(0, 255)]:
-    #                    bright = clrs[1]
-    #                    contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
-    #                    if color == "red":
-    #                        fg_color = clrs[1] << 16
-    #                    if color == "blue":
-    #                        fg_color = clrs[1]
-    #                    bg_color = clrs[0] << 8
-    #                    rotation_speed = alpha*2*speed*direction
-    #                    t = Trial(
-    #                        counter, 
-    #                        bar_deg=alpha, 
-    #                        space_deg = (60-alpha),
-    #                        rotate_deg_hz=rotation_speed,
-    #                        start_mask_deg = 0,
-    #                        end_mask_deg = 180,
-    #                        openloop_duration = Duration(4000),
-    #                        pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
-    #                        fg_color=fg_color, bg_color=bg_color,
-    #                        comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
-    #                    block.append(t)
-    #                    counter += 1
+    for alpha in [30]:
+        for speed in [4]:
+            for direction in [-1, 1]:
+            	for color in ["red", "blue"]:
+                    for clrs in [(0, 255)]:
+                        bright = clrs[1]
+                        contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
+                        if color == "red":
+                            fg_color = clrs[1] << 16
+                        if color == "blue":
+                            fg_color = clrs[1]
+                        bg_color = clrs[0] << 8
+                        rotation_speed = alpha*2*speed*direction
+                        t = Trial(
+                            counter, 
+                            bar_deg=alpha, 
+                            space_deg = (60-alpha),
+                            rotate_deg_hz=rotation_speed,
+                            start_mask_deg = 180,
+                            end_mask_deg = 360,
+                            openloop_duration = Duration(4000),
+                            pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
+                            fg_color=fg_color, bg_color=bg_color,
+                            comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
+                        block.append(t)
+                        counter += 1
+                        
+    ## rotation with right mask
+    for alpha in [10, 30]: #specifying the bar_deg
+        for speed in [4, 10]: #specifying the temporal frequency (in Hz)
+            for direction in [-1, 1]: #specifying the direction of movement
+                for clrs in [(0, 64), (0, 255)]: #specifying the contrast/brightness
+                        bright = clrs[1]
+                        contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
+                        fg_color = clrs[1] << 8
+                        bg_color = clrs[0] << 8
+                        rotation_speed = alpha*2*speed*direction
+                        t = Trial(
+                            counter, 
+                            bar_deg=alpha, 
+                            space_deg = (60-alpha),
+                            start_mask_deg = 180,
+                            end_mask_deg = 360,
+                            rotate_deg_hz=rotation_speed,
+                            openloop_duration = Duration(4000),
+                            pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
+                            fg_color=fg_color, bg_color=bg_color,
+                            comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
+                        block.append(t)
+                        counter += 1
+                        
+                        
+    ## Red and blue
+    
+    for alpha in [30]:
+        for speed in [4]:
+            for direction in [-1, 1]:
+            	for color in ["red", "blue"]:
+                    for clrs in [(0, 255)]:
+                        bright = clrs[1]
+                        contrast = round((clrs[1]-clrs[0])/(clrs[1]+clrs[0]), 1)
+                        if color == "red":
+                            fg_color = clrs[1] << 16
+                        if color == "blue":
+                            fg_color = clrs[1]
+                        bg_color = clrs[0] << 8
+                        rotation_speed = alpha*2*speed*direction
+                        t = Trial(
+                            counter, 
+                            bar_deg=alpha, 
+                            space_deg = (60-alpha),
+                            rotate_deg_hz=rotation_speed,
+                            start_mask_deg = 0,
+                            end_mask_deg = 180,
+                            openloop_duration = Duration(4000),
+                            pretrial_duration=Duration(2000), posttrial_duration=Duration(0),
+                            fg_color=fg_color, bg_color=bg_color,
+                            comment=f"Rotation alpha {alpha} speed {speed} direction {direction} brightness {bright} contrast {contrast}")
+                        block.append(t)
+                        counter += 1
 
     while not start:
         time.sleep(0.1)
@@ -447,7 +447,7 @@ def log_metadata():
         "starvation-start": "2023-03-16 11:15:00",
 
         "tether-start": "2023-03-16 15:44:00",
-        "fly": 336,
+        "fly": 335,
         "tether-end"  : "2023-03-16 15:57:00",
         "sex": "f",
         
